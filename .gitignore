@@ -1,6 +1,11 @@
 .gradle
 /local.properties
 /.idea/workspace.xml
+/.idea/grandle.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/app/app.iml
+aphasia.iml
 /.idea/libraries
 .DS_Store
 /build
