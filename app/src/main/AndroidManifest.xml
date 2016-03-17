@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Operations"
+            android:label="@string/title_activity_operations" >
+        </activity>
+        <activity
+            android:name=".Video"
+            android:label="@string/title_activity_video" >
+        </activity>
+        <activity
+            android:name=".Token"
+            android:label="@string/title_activity_token" >
+        </activity>
+        <activity
+            android:name=".Results"
+            android:label="@string/title_activity_results" >
+        </activity>
     </application>
 
 </manifest>
