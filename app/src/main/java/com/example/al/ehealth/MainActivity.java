@@ -1,5 +1,6 @@
 package com.example.al.ehealth;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if(id == R.id.action_activity_video){
+            Intent i = new Intent(this, Video.class);
+            startActivity(i);
+
         }
 
         return super.onOptionsItemSelected(item);

@@ -1,17 +1,28 @@
 package com.example.al.ehealth;
 
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.VideoView;
+
+import java.util.ArrayList;
 
 
 public class Video extends ActionBarActivity {
+    private ArrayList<ExerciseVideo> exercises = new ArrayList<>();
+
+    private VideoView video;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
+        video = (VideoView)findViewById(R.id.videoView);
+        Uri uri = Uri.parse("android.resource://com.example.al.ehealth/" + R.raw.aguacates);
+        video.setVideoURI(uri);
+        video.start();
     }
 
 

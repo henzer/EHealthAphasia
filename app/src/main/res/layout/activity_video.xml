@@ -1,12 +1,57 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.al.ehealth.Video">
+    android:layout_height="match_parent"
+    tools:context="com.example.al.ehealth.Video"
+    android:orientation="vertical"
+    >
+    
+    <VideoView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/videoView"/>
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageView android:layout_width="match_parent" android:layout_height="10dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+            <Button android:id="@+id/option1"  android:text="Opcion 1" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
+            <Button android:id="@+id/option2"  android:text="Opcion 2" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
 
-</RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+            <Button android:id="@+id/option3" android:text="Opcion 3" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
+            <Button android:id="@+id/option4" android:text="Opcion 4" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selected_color_button_cancel"
+                android:text="Cancelar"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selected_color_button_next"
+                android:layout_weight="1"
+                android:text="Siguiente"/>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
