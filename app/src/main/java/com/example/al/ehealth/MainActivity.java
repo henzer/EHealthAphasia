@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity {
         }else if(id == R.id.action_activity_video){
             Intent i = new Intent(this, Video.class);
             startActivity(i);
-
         }
-
+        else if(id == R.id.action_activity_operations){
+            Intent i = new Intent(this, Operations.class);
+            startActivity(i);
+        }
         return super.onOptionsItemSelected(item);
     }
 }
