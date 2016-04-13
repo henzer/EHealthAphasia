@@ -11,5 +11,6 @@
     <string name="title_activity_results">Results</string>
     <string name="action_activity_video">Prueba Video</string>
     <string name="action_activity_operations">Prueba Operaciones</string>
+    <string name="action_activity_token">Prueba Token</string>
 
 </resources>

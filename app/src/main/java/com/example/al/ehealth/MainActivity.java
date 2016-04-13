@@ -34,12 +34,16 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }else if(id == R.id.action_activity_video){
+        }else if(id == R.id.action_activity_video){ //PRueba Video
             Intent i = new Intent(this, Video.class);
             startActivity(i);
         }
-        else if(id == R.id.action_activity_operations){
+        else if(id == R.id.action_activity_operations){ //Prueba Operaciones
             Intent i = new Intent(this, Operations.class);
+            startActivity(i);
+        }
+        else if(id == R.id.action_activity_token){ //Prueba Token
+            Intent i = new Intent(this, Token.class);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
