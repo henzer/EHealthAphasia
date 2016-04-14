@@ -2,6 +2,7 @@ package com.example.al.ehealth;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,9 +13,10 @@ import android.widget.Toast;
 
 public class Results extends ActionBarActivity {
 
-    int pVideos;
-    int pTokens;
-    int pOperaciones;
+    Results thisContext = this;
+    float pVideos;
+    float pTokens;
+    float pOperaciones;
     TextView pVid;
     TextView pTok;
     TextView pOp;
@@ -31,7 +33,7 @@ public class Results extends ActionBarActivity {
         pTok = (TextView)findViewById(R.id.textView3);
         pOp = (TextView)findViewById(R.id.textView4);
 
-        btRe = (Button)findViewById(R.id.button);
+        btRe = (Button)findViewById(R.id.reset);
 
         pVid.setText(pVid.getText()+" "+pVideos);
         pTok.setText(pTok.getText()+" "+pTokens);
@@ -39,17 +41,21 @@ public class Results extends ActionBarActivity {
 
         btRe.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                MainActivity.puntaje_operaciones = 0;
-                MainActivity.puntaje_tokens = 0;
-                MainActivity.puntaje_videos = 0;
+                MainActivity.puntaje_operaciones = 0f;
+                MainActivity.puntaje_tokens = 0f;
+                MainActivity.puntaje_videos = 0f;
 
                 pVideos = MainActivity.puntaje_videos;
                 pTokens = MainActivity.puntaje_tokens;
                 pOperaciones = MainActivity.puntaje_operaciones;
 
-                pVid = (TextView)findViewById(R.id.textView2);
-                pTok = (TextView)findViewById(R.id.textView3);
-                pOp = (TextView)findViewById(R.id.textView4);
+                pVid.setText("Puntaje en Videos: "+pVideos);
+                pTok.setText("Puntaje en Tokens: "+pTokens);
+                pOp.setText("Puntaje en Operaciones: "+pOperaciones);
+
+                Toast t = Toast.makeText(thisContext, "Datos Reiniciados", Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.CENTER, 0, 0);
+                t.show();
             }
         });
 

@@ -157,6 +157,9 @@ public class Token extends ActionBarActivity {
                 //cargar nueva pregunta e imagen
                 preguntasSoFar++;
                 if(preguntasSoFar>10){
+
+                    /*ACA FALTA ACTUALIZAR O NO SE Q A LAS ESTATICAS*/
+                    MainActivity.puntaje_tokens = aciertos / 10.0f;
                     finish();
                     Intent i = new Intent(thisContext, MainActivity.class);
                     startActivity(i);

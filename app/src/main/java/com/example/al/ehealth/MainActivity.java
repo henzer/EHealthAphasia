@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private Button tokenButton;
 
     private Button resultButton;
-    public static int puntaje_videos = 0;
-    public static int puntaje_tokens = 0;
-    public static int puntaje_operaciones = 0;
+    public static float puntaje_videos = 0;
+    public static float puntaje_tokens = 0;
+    public static float puntaje_operaciones = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -78,6 +78,7 @@ public class Video extends ActionBarActivity {
     public void loadNextExercise(){
         cont++;
         if(cont==exercises.size()){
+            MainActivity.puntaje_videos = success / (float) cont;
             finish();
             return;
         }
