@@ -3,11 +3,11 @@ package com.example.al.ehealth;
 import java.util.List;
 
 public class ExerciseVideo {
-    private String video;
+    private int video;
     private String correct;
     private List<String> options;
 
-    public ExerciseVideo(String video, String correct, List<String> options) {
+    public ExerciseVideo(int video, String correct, List<String> options) {
         this.video = video;
         this.correct = correct;
         this.options = options;
@@ -16,11 +16,11 @@ public class ExerciseVideo {
     public ExerciseVideo() {
     }
 
-    public String getVideo() {
+    public int getVideo() {
         return video;
     }
 
-    public void setVideo(String video) {
+    public void setVideo(int video) {
         this.video = video;
     }
 
