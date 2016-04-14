@@ -9,4 +9,6 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_activity_token" android:title="@string/action_activity_token"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_activity_results" android:title="@string/action_activity_results"
+        android:orderInCategory="100" app:showAsAction="never" />
 </menu>

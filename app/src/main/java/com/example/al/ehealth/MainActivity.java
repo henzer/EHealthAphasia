@@ -10,12 +10,16 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
     private MainActivity thisContext = this;
     private Button videoButton;
     private Button operacionesButton;
     private Button tokenButton;
 
     private Button resultButton;
+    public static int puntaje_videos = 0;
+    public static int puntaje_tokens = 0;
+    public static int puntaje_operaciones = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
         }
         else if(id == R.id.action_activity_token){ //Prueba Token
             Intent i = new Intent(this, Token.class);
+            startActivity(i);
+        }
+        else if(id == R.id.action_activity_results)
+        {
+            Intent i = new Intent(this, Results.class);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
