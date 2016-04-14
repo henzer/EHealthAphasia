@@ -10,7 +10,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
     private MainActivity thisContext = this;
     private Button videoButton;
     private Button operacionesButton;
