@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +48,9 @@ public class Token extends ActionBarActivity {
     //Brandon
     private Random r = new Random();
 
+    //Puntaje
+    private int aciertos = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +69,7 @@ public class Token extends ActionBarActivity {
                     Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
+                    aciertos++;
                 }
                 else{
                     //incorrecta
@@ -88,6 +91,7 @@ public class Token extends ActionBarActivity {
                     Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
+                    aciertos++;
                 }
                 else{
                     //incorrecta
@@ -109,6 +113,7 @@ public class Token extends ActionBarActivity {
                     Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
+                    aciertos++;
                 }
                 else{
                     //incorrecta
@@ -131,6 +136,7 @@ public class Token extends ActionBarActivity {
                         Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.CENTER, 0, 0);
                         t.show();
+                        aciertos++;
                     } else {
                         //incorrecta
                         Toast t = Toast.makeText(getApplicationContext(), "¡Respuesta Incorrecta!", Toast.LENGTH_SHORT);
@@ -151,6 +157,7 @@ public class Token extends ActionBarActivity {
                 //cargar nueva pregunta e imagen
                 preguntasSoFar++;
                 if(preguntasSoFar>10){
+                    finish();
                     Intent i = new Intent(thisContext, MainActivity.class);
                     startActivity(i);
                 }
@@ -185,7 +192,7 @@ public class Token extends ActionBarActivity {
                 if(respRand==1) {
                     //almacenar el id del boton de la respuesta actual
                     botonRespuesta = "option1";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     //button1.set
                     button2.setBackgroundResource(R.drawable.cur);
                     button3.setBackgroundResource(R.drawable.cw);
@@ -195,7 +202,7 @@ public class Token extends ActionBarActivity {
                     //almacenar el id del boton de la respuesta actual
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cur);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cw);
                     button4.setBackgroundResource(R.drawable.cub);
                 }
@@ -203,7 +210,7 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option3";
                     button1.setBackgroundResource(R.drawable.cw);
                     button2.setBackgroundResource(R.drawable.cur);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cub);
                 }
                 else if(respRand==4) {
@@ -211,7 +218,7 @@ public class Token extends ActionBarActivity {
                     button1.setBackgroundResource(R.drawable.cub);
                     button2.setBackgroundResource(R.drawable.cur);
                     button3.setBackgroundResource(R.drawable.cw);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
             }
             else if(colorInicial.equals("Amarillo")){
@@ -220,19 +227,19 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option1";
                     button1.setBackgroundResource(R.drawable.cy);
                     button2.setBackgroundResource(R.drawable.cub);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cub);
                     button2.setBackgroundResource(R.drawable.cy);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==3) {
                     botonRespuesta = "option3";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cub);
                     button3.setBackgroundResource(R.drawable.cy);
                     button4.setBackgroundResource(R.drawable.cur);
@@ -241,7 +248,7 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option4";
                     button1.setBackgroundResource(R.drawable.cur);
                     button2.setBackgroundResource(R.drawable.cub);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cy);
                 }
             }
@@ -282,19 +289,19 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option1";
                     button1.setBackgroundResource(R.drawable.cb);
                     button2.setBackgroundResource(R.drawable.cuw);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cuw);
                     button2.setBackgroundResource(R.drawable.cb);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==3) {
                     botonRespuesta = "option3";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cuw);
                     button3.setBackgroundResource(R.drawable.cb);
                     button4.setBackgroundResource(R.drawable.cur);
@@ -303,7 +310,7 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option4";
                     button1.setBackgroundResource(R.drawable.cur);
                     button2.setBackgroundResource(R.drawable.cuw);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cb);
                 }
             }
@@ -408,13 +415,13 @@ public class Token extends ActionBarActivity {
                 if(respRand==1) {
                     botonRespuesta = "option1";
                     button1.setBackgroundResource(R.drawable.cuw);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cur);
                     button4.setBackgroundResource(R.drawable.cy);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cuw);
                     button3.setBackgroundResource(R.drawable.cur);
                     button4.setBackgroundResource(R.drawable.cy);
@@ -422,14 +429,14 @@ public class Token extends ActionBarActivity {
                 else if(respRand==3) {
                     botonRespuesta = "option3";
                     button1.setBackgroundResource(R.drawable.cur);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cuw);
                     button4.setBackgroundResource(R.drawable.cy);
                 }
                 else if(respRand==4) {
                     botonRespuesta = "option4";
                     button1.setBackgroundResource(R.drawable.cur);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cy);
                     button4.setBackgroundResource(R.drawable.cuw);
                 }
@@ -472,25 +479,25 @@ public class Token extends ActionBarActivity {
                     button1.setBackgroundResource(R.drawable.cur);
                     button2.setBackgroundResource(R.drawable.cb);
                     button3.setBackgroundResource(R.drawable.cuw);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cb);
                     button2.setBackgroundResource(R.drawable.cur);
                     button3.setBackgroundResource(R.drawable.cuw);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
                 else if(respRand==3) {
                     botonRespuesta = "option3";
                     button1.setBackgroundResource(R.drawable.cuw);
                     button2.setBackgroundResource(R.drawable.cb);
                     button3.setBackgroundResource(R.drawable.cur);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
                 else if(respRand==4) {
                     botonRespuesta = "option4";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cb);
                     button3.setBackgroundResource(R.drawable.cuw);
                     button4.setBackgroundResource(R.drawable.cur);
@@ -531,7 +538,7 @@ public class Token extends ActionBarActivity {
                 if(respRand==1) {
                     //almacenar el id del boton de la respuesta actual
                     botonRespuesta = "option1";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cur);
                     button3.setBackgroundResource(R.drawable.cw);
                     button4.setBackgroundResource(R.drawable.cub);
@@ -540,7 +547,7 @@ public class Token extends ActionBarActivity {
                     //almacenar el id del boton de la respuesta actual
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cur);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cw);
                     button4.setBackgroundResource(R.drawable.cub);
                 }
@@ -548,7 +555,7 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option3";
                     button1.setBackgroundResource(R.drawable.cw);
                     button2.setBackgroundResource(R.drawable.cur);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cub);
                 }
                 else if(respRand==4) {
@@ -556,7 +563,7 @@ public class Token extends ActionBarActivity {
                     button1.setBackgroundResource(R.drawable.cub);
                     button2.setBackgroundResource(R.drawable.cur);
                     button3.setBackgroundResource(R.drawable.cw);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
             }
             else if(colorInicial.equals("Amarillo")){
@@ -565,19 +572,19 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option1";
                     button1.setBackgroundResource(R.drawable.cy);
                     button2.setBackgroundResource(R.drawable.cub);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cub);
                     button2.setBackgroundResource(R.drawable.cy);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==3) {
                     botonRespuesta = "option3";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cub);
                     button3.setBackgroundResource(R.drawable.cy);
                     button4.setBackgroundResource(R.drawable.cur);
@@ -586,7 +593,7 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option4";
                     button1.setBackgroundResource(R.drawable.cur);
                     button2.setBackgroundResource(R.drawable.cub);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cy);
                 }
             }
@@ -627,19 +634,19 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option1";
                     button1.setBackgroundResource(R.drawable.cb);
                     button2.setBackgroundResource(R.drawable.cuw);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cuw);
                     button2.setBackgroundResource(R.drawable.cb);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cur);
                 }
                 else if(respRand==3) {
                     botonRespuesta = "option3";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cuw);
                     button3.setBackgroundResource(R.drawable.cb);
                     button4.setBackgroundResource(R.drawable.cur);
@@ -648,7 +655,7 @@ public class Token extends ActionBarActivity {
                     botonRespuesta = "option4";
                     button1.setBackgroundResource(R.drawable.cur);
                     button2.setBackgroundResource(R.drawable.cuw);
-                    button3.setBackgroundResource(R.drawable.cg);
+                    button3.setBackgroundResource(R.drawable.circlegreen);
                     button4.setBackgroundResource(R.drawable.cb);
                 }
             }
@@ -753,13 +760,13 @@ public class Token extends ActionBarActivity {
                 if(respRand==1) {
                     botonRespuesta = "option1";
                     button1.setBackgroundResource(R.drawable.cuw);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cur);
                     button4.setBackgroundResource(R.drawable.cy);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cuw);
                     button3.setBackgroundResource(R.drawable.cur);
                     button4.setBackgroundResource(R.drawable.cy);
@@ -767,14 +774,14 @@ public class Token extends ActionBarActivity {
                 else if(respRand==3) {
                     botonRespuesta = "option3";
                     button1.setBackgroundResource(R.drawable.cur);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cuw);
                     button4.setBackgroundResource(R.drawable.cy);
                 }
                 else if(respRand==4) {
                     botonRespuesta = "option4";
                     button1.setBackgroundResource(R.drawable.cur);
-                    button2.setBackgroundResource(R.drawable.cg);
+                    button2.setBackgroundResource(R.drawable.circlegreen);
                     button3.setBackgroundResource(R.drawable.cy);
                     button4.setBackgroundResource(R.drawable.cuw);
                 }
@@ -817,25 +824,25 @@ public class Token extends ActionBarActivity {
                     button1.setBackgroundResource(R.drawable.cur);
                     button2.setBackgroundResource(R.drawable.cb);
                     button3.setBackgroundResource(R.drawable.cuw);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
                 else if(respRand==2) {
                     botonRespuesta = "option2";
                     button1.setBackgroundResource(R.drawable.cb);
                     button2.setBackgroundResource(R.drawable.cur);
                     button3.setBackgroundResource(R.drawable.cuw);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
                 else if(respRand==3) {
                     botonRespuesta = "option3";
                     button1.setBackgroundResource(R.drawable.cuw);
                     button2.setBackgroundResource(R.drawable.cb);
                     button3.setBackgroundResource(R.drawable.cur);
-                    button4.setBackgroundResource(R.drawable.cg);
+                    button4.setBackgroundResource(R.drawable.circlegreen);
                 }
                 else if(respRand==4) {
                     botonRespuesta = "option4";
-                    button1.setBackgroundResource(R.drawable.cg);
+                    button1.setBackgroundResource(R.drawable.circlegreen);
                     button2.setBackgroundResource(R.drawable.cb);
                     button3.setBackgroundResource(R.drawable.cuw);
                     button4.setBackgroundResource(R.drawable.cur);
