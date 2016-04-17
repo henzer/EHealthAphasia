@@ -1,130 +1,96 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context="com.example.al.ehealth.Video"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.al.ehealth.Operations"
     android:orientation="vertical"
-    android:weightSum="100"
     >
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="30"
-        >
-        <ImageView
-            android:id="@+id/num1digit1"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            />
-        <ImageView
-            android:id="@+id/num1digit2"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            />
-        <ImageView
-            android:id="@+id/op"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            />
-        <ImageView
-            android:id="@+id/num2digit1"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            />
-        <ImageView
-            android:id="@+id/num2digit2"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            />
-    </LinearLayout>
-
-
-    <ImageView android:layout_width="match_parent" android:layout_height="10dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:layout_weight="70">
+        android:layout_gravity="bottom"
+        android:weightSum="100">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-            <TextView
-                android:text="Respuesta:"
-                android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_weight="40">
+            <TextView android:id="@+id/preguntaO" android:text="@string/hello_world" android:layout_width="match_parent"
+                android:layout_height="fill_parent" android:background="#000048" android:textColor="#FFFFFF"
+                android:gravity="center" android:textSize="30sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="60">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize = "70sp"
-                android:id="@+id/textR"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-            <Button android:id="@+id/val1" android:textSize = "50sp" android:text="1" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/val2" android:textSize = "50sp" android:text="2" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/val3" android:textSize = "50sp" android:text="3" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-            <Button android:id="@+id/val4" android:textSize = "50sp" android:text="4" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/val5" android:textSize = "50sp" android:text="5" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/val6" android:textSize = "50sp" android:text="6" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-            <Button android:id="@+id/val7" android:textSize = "50sp" android:text="7" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/val8" android:textSize = "50sp" android:text="8" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/val9" android:textSize = "50sp" android:text="9" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-            <Button android:id="@+id/valR" android:textSize = "50sp" android:text="B" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/val0" android:textSize = "50sp" android:text="0" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-            <Button android:id="@+id/valE" android:textSize = "50sp" android:text="E" android:layout_weight="1" style="@style/AppTheme.ButtonOption"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-
-            <Button
+                android:orientation="horizontal"
+                android:layout_weight="10">
+                <Button android:id="@+id/val1"  android:layout_weight="1" android:text="1" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val2"  android:layout_weight="1" android:text="2" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val3"  android:layout_weight="1" android:text="3" style="@style/AppTheme.ButtonOption"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/selected_color_button_cancel"
-                android:text="Cancelar"/>
-
-            <Button
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="10">
+                <Button android:id="@+id/val4"  android:layout_weight="1" android:text="4" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val5"  android:layout_weight="1" android:text="5" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val6"  android:layout_weight="1" android:text="6" style="@style/AppTheme.ButtonOption"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/selected_color_button_next"
-                android:layout_weight="1"
-                android:id="@+id/valSiguiente"
-                android:text="Siguiente"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="10">
+                <Button android:id="@+id/val7"  android:layout_weight="1" android:text="7" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val8"  android:layout_weight="1" android:text="8" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val9"  android:layout_weight="1" android:text="9" style="@style/AppTheme.ButtonOption"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="10">
+                <Button android:id="@+id/valBo"  android:layout_weight="1" android:text="B" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val0"  android:layout_weight="1" android:text="0" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/valEn"  android:layout_weight="1" android:text="E" style="@style/AppTheme.ButtonOption"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/cancelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/selected_color_button_cancel"
+                    android:text="Cancelar"/>
+
+                <Button
+                    android:id="@+id/valsiguiente"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selected_color_button_next"
+                    android:layout_weight="1"
+                    android:text="Siguiente"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
