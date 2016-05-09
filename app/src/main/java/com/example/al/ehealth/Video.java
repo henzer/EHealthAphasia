@@ -67,11 +67,16 @@ public class Video extends ActionBarActivity {
     }
 
     public void loadResources(){
-        exercises.add(new ExerciseVideo(R.raw.aguacates, "Aguacates", new ArrayList<>(Arrays.asList("Aguacates", "Cebollas", "Apio", "Zanahoria"))));
-        exercises.add(new ExerciseVideo(R.raw.cebollas, "Cebollas", new ArrayList<>(Arrays.asList("Aguacates", "Cebollas", "Mandarinas", "Zanahoria"))));
-        exercises.add(new ExerciseVideo(R.raw.manzanas, "Manzanas", new ArrayList<>(Arrays.asList("Frijoles", "Cebollas", "Apio", "Manzanas"))));
-        exercises.add(new ExerciseVideo(R.raw.melocotones, "Melocotones", new ArrayList<>(Arrays.asList("Aguacates", "Cebollas", "Melocotones", "Zanahoria"))));
-        exercises.add(new ExerciseVideo(R.raw.naranjas, "Naranjas", new ArrayList<>(Arrays.asList("Repollo", "Naranjas", "Apio", "Zanahoria"))));
+        exercises.add(new ExerciseVideo(R.raw.amigo, "Amigo", new ArrayList<>(Arrays.asList("Amigo", "Perro", "Gato", "Lapicero"))));
+        exercises.add(new ExerciseVideo(R.raw.botella, "Botella", new ArrayList<>(Arrays.asList("Manzana", "Botella", "Celular", "Conejo"))));
+        exercises.add(new ExerciseVideo(R.raw.camisa, "Camisa", new ArrayList<>(Arrays.asList("Frijoles", "Camisa", "Cabeza", "Comida"))));
+        exercises.add(new ExerciseVideo(R.raw.comida, "Comida", new ArrayList<>(Arrays.asList("Comida", "Cebollas", "Melocotones", "Zanahoria"))));
+        exercises.add(new ExerciseVideo(R.raw.mariposa, "Mariposa", new ArrayList<>(Arrays.asList("Mariposa", "Gato", "Telefono", "Trabajo"))));
+        exercises.add(new ExerciseVideo(R.raw.medicina, "Medicina", new ArrayList<>(Arrays.asList("Medicina", "Comida", "Cabeza", "Trabajo"))));
+        exercises.add(new ExerciseVideo(R.raw.mochila, "Mochila", new ArrayList<>(Arrays.asList("Mochila", "Gato", "Celular", "Trabajo"))));
+        exercises.add(new ExerciseVideo(R.raw.telefono, "Telefono", new ArrayList<>(Arrays.asList("Telefono", "Gato", "Botella", "Lapicero"))));
+        exercises.add(new ExerciseVideo(R.raw.vestido, "Vestido", new ArrayList<>(Arrays.asList("Vestido", "Manzana", "Telefono", "Conejo"))));
+
         Collections.shuffle(exercises);
     }
 

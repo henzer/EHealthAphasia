@@ -287,5 +287,8 @@ public class Operations extends ActionBarActivity {
         preguntasSoFar++;
         textP.setText(new DecimalFormat("00").format(valor1) +" "+operacion+" "+new DecimalFormat("00").format(valor2)+" = ");
     }
+    public void cancel(View v){
+        finish();
+    }
 
 }

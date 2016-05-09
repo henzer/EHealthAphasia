@@ -14,4 +14,15 @@
         <item name="android:background">@drawable/selected_color_button_option</item>
     </style>
 
+    <style name="AppTheme.TextResult" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/selected_color_button_next</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+
+
 </resources>

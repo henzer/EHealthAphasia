@@ -892,4 +892,7 @@ public class Token extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    public void cancel(View v){
+        finish();
+    }
 }
