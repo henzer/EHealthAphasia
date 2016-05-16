@@ -2,6 +2,8 @@ package com.example.al.ehealth;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -66,19 +68,29 @@ public class Token extends ActionBarActivity {
                 preguntasSoFar++;
                 if(botonRespuesta.equals("option1")){
                     //correcta
-                    Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
+                    pregunta.setBackgroundColor(Color.GREEN);
+                    Toast t = Toast.makeText(getApplicationContext(), "Correcto", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
                     aciertos++;
                 }
                 else{
                     //incorrecta
-                    Toast t = Toast.makeText(getApplicationContext(), "¡Respuesta Incorrecta!", Toast.LENGTH_SHORT);
+                    pregunta.setBackgroundColor(Color.RED);
+                    Toast t = Toast.makeText(getApplicationContext(), "Incorrecto", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
                 }
                 if(preguntasSoFar<10){
-                    loadNewQuery();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadNewQuery();
+                        }
+                    }, 1000);
+
+                }else{
+                    finish();
                 }
             }
         });
@@ -88,19 +100,28 @@ public class Token extends ActionBarActivity {
                 preguntasSoFar++;
                 if(botonRespuesta.equals("option2")){
                     //correcta
-                    Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
+                    pregunta.setBackgroundColor(Color.GREEN);
+                    Toast t = Toast.makeText(getApplicationContext(), "Correcto", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
                     aciertos++;
                 }
                 else{
                     //incorrecta
-                    Toast t = Toast.makeText(getApplicationContext(), "¡Respuesta Incorrecta!", Toast.LENGTH_SHORT);
+                    pregunta.setBackgroundColor(Color.RED);
+                    Toast t = Toast.makeText(getApplicationContext(), "Incorrecto", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
                 }
                 if(preguntasSoFar<10){
-                    loadNewQuery();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadNewQuery();
+                        }
+                    }, 1000);
+                }else{
+                    finish();
                 }
             }
         });
@@ -110,19 +131,28 @@ public class Token extends ActionBarActivity {
                 preguntasSoFar++;
                 if(botonRespuesta.equals("option3")){
                     //correcta
-                    Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
+                    pregunta.setBackgroundColor(Color.GREEN);
+                    Toast t = Toast.makeText(getApplicationContext(), "Correcto", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
                     aciertos++;
                 }
                 else{
                     //incorrecta
-                    Toast t = Toast.makeText(getApplicationContext(), "¡Respuesta Incorrecta!", Toast.LENGTH_SHORT);
+                    pregunta.setBackgroundColor(Color.RED);
+                    Toast t = Toast.makeText(getApplicationContext(), "Incorrecto", Toast.LENGTH_SHORT);
                     t.setGravity(Gravity.CENTER, 0, 0);
                     t.show();
                 }
                 if(preguntasSoFar<10){
-                    loadNewQuery();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadNewQuery();
+                        }
+                    }, 1000);
+                }else{
+                    finish();
                 }
             }
         });
@@ -133,19 +163,28 @@ public class Token extends ActionBarActivity {
                 if(preguntasSoFar<=10){
                     if (botonRespuesta.equals("option4")) {
                         //correcta
-                        Toast t = Toast.makeText(getApplicationContext(), "¡OK!", Toast.LENGTH_SHORT);
+                        pregunta.setBackgroundColor(Color.GREEN);
+                        Toast t = Toast.makeText(getApplicationContext(), "Correcto", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.CENTER, 0, 0);
                         t.show();
                         aciertos++;
                     } else {
                         //incorrecta
-                        Toast t = Toast.makeText(getApplicationContext(), "¡Respuesta Incorrecta!", Toast.LENGTH_SHORT);
+                        pregunta.setBackgroundColor(Color.RED);
+                        Toast t = Toast.makeText(getApplicationContext(), "Incorrecto", Toast.LENGTH_SHORT);
                         t.setGravity(Gravity.CENTER, 0, 0);
                         t.show();
                     }
                 }
                 if(preguntasSoFar<10){
-                    loadNewQuery();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadNewQuery();
+                        }
+                    }, 1000);
+                }else{
+                    finish();
                 }
             }
         });
@@ -156,13 +195,10 @@ public class Token extends ActionBarActivity {
             public void onClick(View arg0) {
                 //cargar nueva pregunta e imagen
                 preguntasSoFar++;
-                if(preguntasSoFar>10){
-
+                if(preguntasSoFar>=10){
                     /*ACA FALTA ACTUALIZAR O NO SE Q A LAS ESTATICAS*/
                     MainActivity.puntaje_tokens = aciertos / 10.0f;
                     finish();
-                    Intent i = new Intent(thisContext, MainActivity.class);
-                    startActivity(i);
                 }
                 else{
                     loadNewQuery();
@@ -183,7 +219,7 @@ public class Token extends ActionBarActivity {
         yaPreguntadas.add(indiceUnico);
 
         //cargar pregunta
-        pregunta.setText("Seleccione un " + formaInicial + " color " + colorInicial);
+        pregunta.setText("" + formaInicial + " " + colorInicial);
 
         //cargar imagen respuesta a boton random
         int respRand = r.nextInt(4)+1;
@@ -511,6 +547,8 @@ public class Token extends ActionBarActivity {
 
     private void loadNewQuery(){
 
+        //Carga el color por defecto de la pregunta
+        pregunta.setBackgroundColor(0xFF000048);
         //Cargar primera pregunta random
         int indice1, indice2, indiceUnico;
         do{
@@ -529,7 +567,7 @@ public class Token extends ActionBarActivity {
         yaPreguntadas.add(indiceUnico);
 
         //cargar pregunta
-        pregunta.setText("Seleccione un " + formaInicial + " color " + colorInicial);
+        pregunta.setText("" + formaInicial + " " + colorInicial);
 
         //cargar imagen respuesta a boton random
         int respRand = r.nextInt(4)+1;

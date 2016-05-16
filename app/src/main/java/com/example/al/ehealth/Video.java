@@ -1,14 +1,18 @@
 package com.example.al.ehealth;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -22,6 +26,7 @@ public class Video extends ActionBarActivity {
     private ArrayList<ExerciseVideo> exercises = new ArrayList<>();
 
     private VideoView video;
+    private TextView image_play;
     private ExerciseVideo current;
     private Button[][] buttons;
     private int cont = -1;
@@ -34,6 +39,7 @@ public class Video extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
         video = (VideoView)findViewById(R.id.videoView);
+        image_play = (TextView)findViewById(R.id.image_play);
         buttons = new Button[2][2];
         buttons[0][0] = (Button)findViewById(R.id.option1);
         buttons[0][1] = (Button)findViewById(R.id.option2);
@@ -41,6 +47,14 @@ public class Video extends ActionBarActivity {
         buttons[1][1] = (Button)findViewById(R.id.option4);
         loadResources();
         loadNextExercise();
+
+
+        image_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playVideo();
+            }
+        });
     }
 
 
@@ -81,6 +95,7 @@ public class Video extends ActionBarActivity {
     }
 
     public void loadNextExercise(){
+        image_play.setVisibility(View.GONE);
         cont++;
         if(cont==exercises.size()){
             MainActivity.puntaje_videos = success / (float) cont;
@@ -100,6 +115,19 @@ public class Video extends ActionBarActivity {
         buttons[1][1].setBackgroundColor(0xFF3F51B5);
         Uri uri = Uri.parse("android.resource://com.example.al.ehealth/" + current.getVideo());
         video.setVideoURI(uri);
+        video.start();
+        video.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                image_play.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+
+    public void playVideo(){
+        Log.e("", "Llego aqui");
+        image_play.setVisibility(View.GONE);
         video.start();
     }
 

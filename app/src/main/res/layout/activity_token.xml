@@ -19,7 +19,7 @@
             android:layout_weight="40">
             <TextView android:id="@+id/pregunta" android:text="@string/hello_world" android:layout_width="match_parent"
                 android:layout_height="fill_parent" android:background="#000048" android:textColor="#FFFFFF"
-                android:gravity="center" android:textSize="30sp"/>
+                android:gravity="center" android:textSize="50dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -56,6 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+
                     android:background="@drawable/selected_color_button_cancel"
                     android:onClick="cancel"
                     android:text="Cancelar"/>
@@ -66,7 +67,8 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/selected_color_button_next"
                     android:layout_weight="1"
-                    android:text="Siguiente"/>
+                    android:text="Saltar"
+                    android:onClick="next"/>
 
             </LinearLayout>
 

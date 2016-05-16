@@ -16,10 +16,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_alignParentTop="true"
-            android:layout_weight="40">
+            android:layout_weight="50">
             <TextView android:id="@+id/preguntaO" android:text="@string/hello_world" android:layout_width="match_parent"
                 android:layout_height="fill_parent" android:background="#000048" android:textColor="#FFFFFF"
-                android:gravity="center" android:textSize="30sp"/>
+                android:gravity="center" android:textSize="80dp"/>
 
         </LinearLayout>
 
@@ -28,48 +28,49 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_alignParentBottom="true"
-            android:layout_weight="60">
+
+            android:layout_weight="50">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_weight="10">
-                <Button android:id="@+id/val1"  android:layout_weight="1" android:text="1" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/val2"  android:layout_weight="1" android:text="2" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/val3"  android:layout_weight="1" android:text="3" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val1"  android:layout_weight="1" android:text="1" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/val2"  android:layout_weight="1" android:text="2" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/val3"  android:layout_weight="1" android:text="3" style="@style/AppTheme.ButtonOptionCalculator"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_weight="10">
-                <Button android:id="@+id/val4"  android:layout_weight="1" android:text="4" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/val5"  android:layout_weight="1" android:text="5" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/val6"  android:layout_weight="1" android:text="6" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val4"  android:layout_weight="1" android:text="4" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/val5"  android:layout_weight="1" android:text="5" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/val6"  android:layout_weight="1" android:text="6" style="@style/AppTheme.ButtonOptionCalculator"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_weight="10">
-                <Button android:id="@+id/val7"  android:layout_weight="1" android:text="7" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/val8"  android:layout_weight="1" android:text="8" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/val9"  android:layout_weight="1" android:text="9" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/val7"  android:layout_weight="1" android:text="7" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/val8"  android:layout_weight="1" android:text="8" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/val9"  android:layout_weight="1" android:text="9" style="@style/AppTheme.ButtonOptionCalculator"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_weight="10">
-                <Button android:id="@+id/valBo"  android:layout_weight="1" android:text="B" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/val0"  android:layout_weight="1" android:text="0" style="@style/AppTheme.ButtonOption"/>
-                <Button android:id="@+id/valEn"  android:layout_weight="1" android:text="E" style="@style/AppTheme.ButtonOption"/>
+                <Button android:id="@+id/valBo"  android:layout_weight="1" android:paddingLeft="60dp" android:drawableLeft="@drawable/remove" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/val0"  android:layout_weight="1" android:text="0" style="@style/AppTheme.ButtonOptionCalculator"/>
+                <Button android:id="@+id/valEn"  android:layout_weight="1" android:paddingLeft="60dp" android:drawableLeft="@drawable/enter" style="@style/AppTheme.ButtonOptionCalculator"></Button>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="10">
 
                 <Button
                     android:id="@+id/cancelar"
@@ -86,7 +87,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/selected_color_button_next"
                     android:layout_weight="1"
-                    android:text="Siguiente"/>
+                    android:text="Saltar"/>
 
             </LinearLayout>
 

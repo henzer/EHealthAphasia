@@ -2,7 +2,9 @@ package com.example.al.ehealth;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -139,17 +141,19 @@ public class Operations extends ActionBarActivity {
                     return;
                 }
                 int resI = Integer.parseInt(res);
-                //System.out.println("!!!!--------------->>"+valor1);
-                //System.out.println("!!!!--------------->>"+valor2);
-                //System.out.println("!!!!--------------->>"+respuesta);
-                //System.out.println("!!!!--------------->>"+resI);
                 if(resI == respuesta)
                 {
+                    textP.setBackgroundColor(Color.GREEN);
                     Toast.makeText(Operations.this, "Correcto",
                             Toast.LENGTH_SHORT).show();
                     aciertos++;
                     if(preguntasSoFar<10){
-                        generarNueva();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                generarNueva();
+                            }
+                        }, 1000);
                     }
                     else
                     {
@@ -162,10 +166,16 @@ public class Operations extends ActionBarActivity {
                 }
                 else
                 {
+                    textP.setBackgroundColor(Color.RED);
                     Toast.makeText(Operations.this, "Incorrecto",
                             Toast.LENGTH_SHORT).show();
                     if(preguntasSoFar<10){
-                        generarNueva();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                generarNueva();
+                            }
+                        }, 1000);
                     }
                     else{
                         MainActivity.puntaje_operaciones = aciertos / 10.0f;
@@ -174,6 +184,7 @@ public class Operations extends ActionBarActivity {
                         startActivity(i);
                     }
                 }
+
             }
         });
         bSig.setOnClickListener(new View.OnClickListener() {
@@ -181,8 +192,8 @@ public class Operations extends ActionBarActivity {
                 generarNueva();
             }
         });
-        generarNueva();
 
+        generarNueva();
     }
 
 
@@ -210,6 +221,9 @@ public class Operations extends ActionBarActivity {
 
     private void generarNueva()
     {
+        //Coloca el color por defecto al TextView de la operacion
+        textP.setBackgroundColor(0xFF000048);
+
         // Primero un random para el tipo de operacion
         Random r = new Random();
         int opT = r.nextInt(3);
