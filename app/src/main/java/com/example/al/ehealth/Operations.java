@@ -46,10 +46,13 @@ public class Operations extends ActionBarActivity {
 
     private int aciertos;
     private int preguntasSoFar = 0;
+    private int contadorOperaciones = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operations);
+
+        contadorOperaciones = 0;
 
         b1 = (Button) findViewById(R.id.val1);
         b2 = (Button) findViewById(R.id.val2);
@@ -221,16 +224,34 @@ public class Operations extends ActionBarActivity {
 
     private void generarNueva()
     {
+        contadorOperaciones++;
         //Coloca el color por defecto al TextView de la operacion
         textP.setBackgroundColor(0xFF000048);
 
         // Primero un random para el tipo de operacion
         Random r = new Random();
         int opT = r.nextInt(3);
-        int dig1 = r.nextInt(10);
+        int dig1 = r.nextInt(1);
         int dig2 = r.nextInt(10);
-        int dig3 = r.nextInt(10);
+        int dig3 = r.nextInt(1);
         int dig4 = r.nextInt(10);
+        if(contadorOperaciones <= 5)
+        {
+            opT = r.nextInt(2);
+            dig1 = r.nextInt(1);
+            dig2 = r.nextInt(10);
+            dig3 = r.nextInt(1);
+            dig4 = r.nextInt(10);
+        }
+        else if(contadorOperaciones > 5)
+        {
+            opT = 2;//r.nextInt(2);
+            dig1 = r.nextInt(1);
+            dig2 = r.nextInt(10);
+            dig3 = r.nextInt(10);
+            dig4 = 10;//r.nextInt(10);
+        }
+
         if (opT == 0) // Suma
         {
             operacion = "+";
@@ -287,14 +308,14 @@ public class Operations extends ActionBarActivity {
             operacion = "x";
             digito1 = 0;
             digito2 = dig2;
-            digito3 = 0;
-            digito4 = dig4;
+            digito3 = dig3;
+            digito4 = 0;
 
             valor1 = digito1*10 + dig2;
             valor2 = digito3*10 + dig4;
 
-            //System.out.println("A------------>>"+valor2);
-            //System.out.println("A------------>>"+valor1);
+            System.out.println("A------------>>"+valor2);
+            System.out.println("A------------>>"+valor1);
 
             respuesta = valor1 * valor2;
         }
