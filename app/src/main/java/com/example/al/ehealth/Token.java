@@ -223,7 +223,6 @@ public class Token extends ActionBarActivity {
 
         //cargar imagen respuesta a boton random
         int respRand = r.nextInt(4)+1;
-
         if(formaInicial.equals("Circulo")){
             //Circulo
             if(colorInicial.equals("Verde")){

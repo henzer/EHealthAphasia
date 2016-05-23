@@ -14,7 +14,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_margin="5dp"
-            android:drawableLeft="@drawable/video"
+            android:drawableBottom="@drawable/play"
+            android:drawablePadding="75dp"
             android:id="@+id/image_play"
             />
 
